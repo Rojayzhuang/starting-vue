@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <fieldset>
+                <legend>数据驱动视图</legend>
+                <button @click="add">Click me</button>{{ counterAdd }}
+                <button v-on:click="subtract">click me too</button>{{ counterSubtract }}
+                
+            </fieldset>
+        </div>
+        
+        <script>
+            const App = {
+                data() {
+                    return {
+                        counterAdd: 0,
+                        counterSubtract: 0
+                    }
+                },
+                methods: {
+                    add() {
+                        this.counterAdd ++
+                    },
+                    subtract() {
+                        this.counterSubtract --
+                    }
+                },
+            }
+            Vue.createApp(App).mount('#app')
+        </script>
+    </body>
+</html>

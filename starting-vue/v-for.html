@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <fieldset>
+                <legend>列表渲染</legend>
+                <ul>
+                    <li v-for="value in items">{{value}}</li>
+                </ul>
+                <button @click="add">Click add</button>
+                <button @click="reduce">Click reduce</button>
+            </fieldset>
+        </div>
+        
+        <script>
+            const App = {
+                data() {
+                    return {
+                        items: ['item0','item1']
+                    }
+                },
+                methods: {
+                    add() {
+                        this.items.push('item' + this.items.length)
+                    },
+                    reduce() {
+                        this.items.splice(this.items.length - 1)
+                    }
+                }
+            }
+            Vue.createApp(App).mount('#app')
+        </script>
+    </body>
+</html>

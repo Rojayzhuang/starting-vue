@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <fieldset>
+                <legend>全局组件</legend>
+                <todo-item></todo-item>
+                <button @click="add">Click add</button>
+                <button @click="reduce">Click reduce</button>
+            </fieldset>
+        </div>
+        
+        <script>
+            const App = {
+                data() {
+                    return {
+                        
+                    }
+                }
+            }
+            const app = Vue.createApp(App)
+            app.component('todo-item', {
+                data() {
+                    return {message: 'hello'}
+                },
+                template: "<div>{{message}} </div>"
+            })
+            app.mount('#app')
+        </script>
+    </body>
+</html>

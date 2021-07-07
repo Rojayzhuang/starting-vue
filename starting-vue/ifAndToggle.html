@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <fieldset>
+                <legend>条件渲染</legend>
+                <p v-if="isShow">子组件</p>
+                <button @click="toggle">Click</button>
+                {{ message }}
+            </fieldset>
+        </div>
+        
+        <script>
+            const App = {
+                data() {
+                    return {
+                        isShow: true
+                    }
+                },
+                methods: {
+                    toggle() {
+                        this.isShow = !this.isShow
+                    }
+                }
+            }
+            Vue.createApp(App).mount('#app')
+        </script>
+    </body>
+</html>
